@@ -1,8 +1,3 @@
-print(y_pred)
-
-# sum = 0
-# for i in y_pred:
-#     sum += 1
-# print(sum) # 205
-
-# print(x_test)
+for model_name in predictions.columns.tolist():
+#     print(f'{model_name}')
+#     print(classification_report(y_test, predictions[model_name]))

@@ -21,4 +21,4 @@ lgbm.fit(x_train, y_train)
 
 y_pred = lgbm.predict(x_test)
 
-print(y_pred) # 심장병이 있는지 0 또는 1로 판단한다.
+print(y_pred) # 심장병 유무를 0 또는 1로 판단한다.
