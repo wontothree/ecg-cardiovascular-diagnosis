@@ -21,13 +21,4 @@ lgbm.fit(x_train, y_train)
 
 y_pred = lgbm.predict(x_test)
 
-# print(accuracy_score(y_pred, y_test))
-
-print(y_pred)
-
-sum = 0
-for i in y_pred:
-    sum += 1
-print(sum) # 205
-
-print(x_test)
+print(y_pred) # 심장병이 있는지 0 또는 1로 판단한다.

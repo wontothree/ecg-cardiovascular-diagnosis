@@ -1,2 +1,8 @@
-print("val. score: %s" % opt.best_score_)
-# print("test score: %s" % opt.score(x_test, y_test))
+print(y_pred)
+
+# sum = 0
+# for i in y_pred:
+#     sum += 1
+# print(sum) # 205
+
+# print(x_test)
