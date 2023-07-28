@@ -33,7 +33,7 @@ bfmi = body_fat_mass / (height * height)
 # age, gender, height, weight, ap_hi, ap_lo, cholesterol, gluc, smoke, alco, active, cardio, lbm, bfm, asm, hrv
 # data = [18393, 2, 168, 62.0, 110, 80, 1, 1, 0, 0, 1, 0, 100, 10, 2.3]
 
-df = pd.read_csv('cardio_train_copy.csv')
+df = pd.read_csv('Algorithm/Data/cardiovascular_disease_dataset.csv')
 y_data = df.pop('cardio')
 x_data = df
 
