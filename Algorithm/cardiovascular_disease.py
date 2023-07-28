@@ -53,5 +53,12 @@ accuracy_score(y_pred, y_test)
 
 # 확률로 출력
 prob_test = lgbm.predict_proba(y_test) # y_test 변경해야 함
+result = prob_test[:,1]
+print(result)
 
-print(prob_test[:,1])
+if (result <= 60):
+    print("안정")
+elif (result <= 80):
+    print("의심")
+else:
+    print("위험")
