@@ -45,3 +45,4 @@ predicted_bodyfat_percent = model.predict(input_data)
 
 print("OO님 심장질환에 걸릴 확률:", predicted_bodyfat_percent)
 
+

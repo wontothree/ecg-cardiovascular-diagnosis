@@ -1,7 +1,7 @@
 import lightgbm
 
 # 미리 학습된 모델 불러오기
-model = lightgbm.Booster(model_file='Algorithm/ml_models/custom_data_prediction.txt')
+model = lightgbm.Booster(model_file='Algorithm/ml_models/cardiovascular_disease_prediction_based_inbodydataset.txt')
 
 # 사용자 입력 받기
 age = int(input("1. 나이: "))
