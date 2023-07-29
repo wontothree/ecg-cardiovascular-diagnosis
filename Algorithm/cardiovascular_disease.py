@@ -37,6 +37,7 @@ df = pd.read_csv('Algorithm/Data/cardiovascular_disease_dataset.csv')
 y_data = df.pop('cardio')
 x_data = df
 
+
 # 데이터
 x_train, x_test, y_train, y_test = train_test_split(
     x_data,
