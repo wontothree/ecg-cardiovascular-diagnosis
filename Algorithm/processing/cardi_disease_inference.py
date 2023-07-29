@@ -18,7 +18,7 @@ import lightgbm
 # bfm = body_fat_mass
 
 # 미리 학습된 모델 불러오기
-model = lightgbm.Booster(model_file='Algorithm/ml_models/cardiovascular_disease_prediction_based_inbodydataset.txt')
+model = lightgbm.Booster(model_file='Algorithm/ml_models/cardiovascular_disease_prediction_model.txt')
 
 # 사용자 입력 받기
 age = int(input("1. 나이: "))
@@ -43,4 +43,5 @@ lbm = float(input("제지방(kg): "))
 input_data = [[age, sex, height, weight, sbp, dbp, chol, gluc, smoke, alchol, active, bfm, lbm]]
 predicted_bodyfat_percent = model.predict(input_data)
 
-print("김세원님 심장질환에 걸릴 확률:", predicted_bodyfat_percent)
+print("OO님 심장질환에 걸릴 확률:", predicted_bodyfat_percent)
+

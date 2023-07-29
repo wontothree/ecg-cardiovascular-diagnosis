@@ -6,7 +6,7 @@ import lightgbm
 
 import csv
 
-df = pd.read_csv('Algorithm/Data/cardiovascular_disease_dataset.csv')
+df = pd.read_csv('Algorithm/Data/Algorithm/data/custom_data.csv.csv')
 cardiovascular_disease_dataset = df.values.tolist()
 
 # 샘플 데이터 추출
