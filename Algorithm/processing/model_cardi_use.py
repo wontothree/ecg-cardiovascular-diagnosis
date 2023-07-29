@@ -18,7 +18,7 @@ import lightgbm
 # bfm = body_fat_mass
 
 # 미리 학습된 모델 불러오기
-model = lightgbm.Booster(model_file='Algorithm/cardiovascular_disease_prediction_based_inbodydataset.txt')
+model = lightgbm.Booster(model_file='Algorithm/ml_models/cardiovascular_disease_prediction_based_inbodydataset.txt')
 
 # 사용자 입력 받기
 age = int(input("1. 나이: "))
