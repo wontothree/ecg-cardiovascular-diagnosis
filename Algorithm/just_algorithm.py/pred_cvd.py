@@ -1,18 +1,24 @@
 import random
 
-def pred_cvd(i): # i = 0 or 1 or 2 or 3
-    dummy_data = [['봄', 30, 0, 160, 50, 3, 1, 1, 2, 2, 1.5], ['여름', 40, 0, 163, 53, 5, 2, 2, 4, 4, 2], ['가을', 25, 1, 180, 80, 3, 4, 4, 5, 5, 2], ['겨율', 35, 175, 67, 10, 5, 5, 6, 6, 2]]
-    name = dummy_data[i][0]
-    age = dummy_data[i][1]
-    sex = dummy_data[i][2]
-    height = dummy_data[i][3]
-    weight = dummy_data[i][4]
-    body_fat_m = dummy_data[i][5]
-    right_arm_m = dummy_data[i][6]
-    left_arm_m = dummy_data[i][7]
-    right_leg_m = dummy_data[i][8]
-    left_leg_m = dummy_data[i][9]
-    abfat = dummy_data[i][10]
+dummy_data = [['봄', 30, 0, 160, 50, 3, 1, 1, 2, 2, 1.5], ['여름', 40, 0, 163, 53, 5, 2, 2, 4, 4, 2], ['가을', 25, 1, 180, 80, 3, 4, 4, 5, 5, 2], ['겨율', 35, 175, 67, 10, 5, 5, 6, 6, 2]]
+
+def choose():
+    i = random.randint(0, 3)
+    return dummy_data[i]
+
+
+def pred_cvd(data):
+    name = data[0]
+    age = data[1]
+    sex = data[2]
+    height = data[3]
+    weight = data[4]
+    body_fat_m = data[5]
+    right_arm_m = data[6]
+    left_arm_m = data[7]
+    right_leg_m = data[8]
+    left_leg_m = data[9]
+    abfat = data[10]
 
     bfmi = body_fat_m / (height * height * 0.0001)
     lbmi = (weight - body_fat_m) / (height * height * 0.0001)
@@ -41,4 +47,4 @@ def pred_cvd(i): # i = 0 or 1 or 2 or 3
     score = score / 100
     return score
 
-print(pred_cvd(0))
+print(pred_cvd(choose()))
