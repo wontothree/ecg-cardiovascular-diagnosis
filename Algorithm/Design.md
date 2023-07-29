@@ -71,3 +71,22 @@ data
 13. Biceps (extended) circumference (cm)
 14. Forearm circumference (cm)
 15. Wrist circumference (cm)
+
+### 최종 데이터 양식
+
+1. Id
+2. Age (days)
+3. Sex (Women: 1, Men: 2)
+4. Height (cm)
+5. Weight (kg)
+6. Systolic blood pressure
+7. Diastolic blood pressure
+8. Cholesterol (1: normal, 2: above normal, 3: well above normal)
+9. Gluc (1: normal, 2: above normal, 3: well above normal)
+10. Smoke (0 or 1)
+11. Alchol (0 or 1)
+12. Active (0 or 1)
+13. bfm
+14. lbm
+15. hrv
+16. Cardiovascular (0 or 1) - Target Value

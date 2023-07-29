@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 
 from lightgbm import LGBMRegressor
+import lightgbm
 
 # df = pd.read_csv('Algorithm/Data/cardiovascular_disease_dataset.csv')
 # cardiovascular_disease_dataset = df.values.tolist()
@@ -49,13 +50,13 @@ for i in data:
     processed_data.append(i)
 
 
-# 반지도 학습을 이용하여 나이(years), 키(inches), 몸무게(lbs)로 체지방을 예측하는 모델만들기
 
+# 반지도 학습을 이용하여 나이(years), 키(inches), 몸무게(lbs)로 체지방을 예측하는 모델만들기
 # 체지방 데이터 [density, percent body fat, age(years), weight(lbs), height(inches), Neck circumference, Chest circumference, Abdomen 2 circumference, Hip circumference, Thigh circumference, Knee circumference, Ankle circumference, Biceps (extended) circumference, Forearm circumference, Wrist circumference]
 df = pd.read_csv('Algorithm/Data/bodyfat_dataset.csv')
 bodyfat_dataset = df.values.tolist()
 
-processed_bodyfat_data = [] # [percent body fat, age(years), weight[lbs], height(inches)]
+processed_bodyfat_data = [] # 학습 데이터 [percent body fat, age(years), weight[lbs], height(inches)]
 for i in bodyfat_dataset:
     i = i[1:5]
     processed_bodyfat_data.append(i)
@@ -73,8 +74,35 @@ y_train = y_data
 lgbm = LGBMRegressor()
 lgbm.fit(x_train, y_train)
 
+# 저장
+# lgbm.booster_.save_model('lgbm_base.txt')
+
 # Predict values for the test set
 y_pred = lgbm.predict(x_train)
+# print(y_pred)
 
-print(processed_bodyfat_data)
-print(y_pred)
+
+
+
+# 각 심혈관질환 데이터의 체지방률
+model = lightgbm.Booster(model_file = 'Algorithm/심혈관질환데이터의체지방률예측.txt')
+
+# 예측 수행
+predicted_bodyfat_percent = model.predict(processed_data)
+predicted_bodyfat_percent = predicted_bodyfat_percent.tolist()
+
+
+
+for i, j in zip(processed_data, predicted_bodyfat_percent):
+    i.append(j)
+
+for i, j in zip(processed_data, data):
+    bfm = i[3] * i[2] * 0.01 / 2.20462
+    lbm = i[2] / 2.20462 - bfm
+    i.pop()
+    i.append(bfm)
+    i.append(lbm)
+    j.insert(12, bfm)
+    j.insert(13, lbm)
+
+print(data) # 데이터 완성
