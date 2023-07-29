@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 from lightgbm import LGBMClassifier
 from sklearn.metrics import accuracy_score
 
-df = pd.read_csv('Algorithm/Data/heart_disease_dataset.csv')
+df = pd.read_csv('Algorithm/data/heart_disease_dataset.csv')
 y_data = df.pop('target')
 x_data = df
 
