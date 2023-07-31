@@ -44,7 +44,7 @@ def pred_cvd(data):
             score = (lbmi - 0.83 * weight / height / height) - (bfmi - 0.17 * weight / height / height) + 1.5 * (asmi - (weight - body_fat_m) * 0.45 / height / height) - (abfat - body_fat_m * 0.165 / height / height)
         else:
             score = (lbmi - 0.8 * weight / height / height) - (bfmi - 0.2 * weight / height / height) + 1.5 * (asmi - (weight - body_fat_m) * 0.41 / height / height) - (abfat - body_fat_m * 0.18 / height / height)
-    score = score / 100
+    score = score / 250
     return score
 
 print(pred_cvd(choose()))
