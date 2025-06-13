@@ -1,3 +1,3 @@
-# InbodyMakerthon
+# ECG-Based Cardiovascular Diagnosis Device
 
-인바디 메이커톤(23.6.27-7.31)에서 인비보_UOS 팀이 개발한 심장변이도 측정기에 대한 코드입니다.(우수상 200만원)
+Excellence Prize at Inbody Makerthon 2023 held by Inbody Co., Ltd (Prize Money $1,462)
